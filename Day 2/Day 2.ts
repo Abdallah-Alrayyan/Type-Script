@@ -114,9 +114,9 @@ myForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   let name = document.getElementById("name") as HTMLInputElement;
-  let description = document.getElementById("des") as HTMLInputElement;
+  let description = document.getElementById("description") as HTMLInputElement;
   let price = document.getElementById("price") as HTMLInputElement;
-  let quantity = document.getElementById("qunt") as HTMLInputElement;
+  let quantity = document.getElementById("quantity") as HTMLInputElement;
 
   const n = name.value;
   const d = description.value;

@@ -43,9 +43,9 @@ var myForm = document.getElementById("myForm");
 myForm.addEventListener("submit", function (event) {
     event.preventDefault();
     var name = document.getElementById("name");
-    var description = document.getElementById("des");
+    var description = document.getElementById("description");
     var price = document.getElementById("price");
-    var quantity = document.getElementById("qunt");
+    var quantity = document.getElementById("quantity");
     var n = name.value;
     var d = description.value;
     var p = Number(price.value);
