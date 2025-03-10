@@ -1,7 +1,6 @@
-"use strict";
 // Task 1: Verify Interface Properties
 // You are given an object that follows an interface Person with properties name and age. Check if the age is above 18 and print "Adult" if true, otherwise print "Minor."
-const Person1 = {
+var Person1 = {
     name: "abd",
     age: 20
 };
@@ -11,14 +10,14 @@ if (Person1.age > 18) {
 else {
     console.log("Minor");
 }
-const teachers = {
+var teachers = {
     name: "abd",
     subjects: ["math", "math", "math"]
 };
-teachers.subjects.forEach(element => {
+teachers.subjects.forEach(function (element) {
     console.log(element);
 });
-const productss = {
+var productss = {
     name: "pen",
     price: 200,
     quantity: 6
@@ -27,37 +26,32 @@ if (productss.quantity > 5) {
     (productss.price * 15) / 100;
     console.log(productss.price);
 }
-let products = JSON.parse(localStorage.getItem("products") || "[]"); // the key is products
+var products = JSON.parse(localStorage.getItem("products") || "[]"); // the key is products
 function displayProducts() {
-    const Container = document.getElementById('div');
+    var Container = document.getElementById('div');
     Container.innerHTML = ''; // Clear existing cards
-    products.forEach(product => {
-        const card = document.createElement('div');
+    products.forEach(function (product) {
+        var card = document.createElement('div');
         card.className = "product-card";
         // Set card content
-        card.innerHTML = `
-            <h3>${product.name}</h3>
-            <p>${product.description}</p>
-            <p>Price: $${product.price}</p>
-            <p>Quantity: ${product.quantity}</p>
-        `;
+        card.innerHTML = "\n            <h3>".concat(product.name, "</h3>\n            <p>").concat(product.description, "</p>\n            <p>Price: $").concat(product.price, "</p>\n            <p>Quantity: ").concat(product.quantity, "</p>\n        ");
         // Append card to container
         Container.appendChild(card);
     });
 }
-let myForm = document.getElementById("myForm");
-myForm.addEventListener("submit", (event) => {
+var myForm = document.getElementById("myForm");
+myForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    let name = document.getElementById("name");
-    let description = document.getElementById("des");
-    let price = document.getElementById("price");
-    let quantity = document.getElementById("qunt");
-    const n = name.value;
-    const d = description.value;
-    const p = Number(price.value);
-    const q = Number(quantity.value);
+    var name = document.getElementById("name");
+    var description = document.getElementById("des");
+    var price = document.getElementById("price");
+    var quantity = document.getElementById("qunt");
+    var n = name.value;
+    var d = description.value;
+    var p = Number(price.value);
+    var q = Number(quantity.value);
     // Create new product object with correct property names
-    const newProduct = {
+    var newProduct = {
         name: n,
         description: d,
         price: p,
@@ -74,6 +68,6 @@ myForm.addEventListener("submit", (event) => {
     displayProducts();
 });
 // Display products on page load
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
     displayProducts();
 });
